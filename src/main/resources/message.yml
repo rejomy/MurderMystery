@@ -1,0 +1,82 @@
+prefix: "&cMurder &7:"
+
+not-found: "$prefix Arena $arena is not found!"
+already-started: "$prefix You can`t join to the arena. Match in $arena already started!"
+# $current = current players, $max max players.
+join: "$prefix Player $player join to the arena $arena. [$current/$max]"
+leave: "$prefix Player $player leave from the arena $arena. [$current/$max]"
+arena-is-full: "$prefix Arena $arena is full!"
+is-in-match: "$prefix You already have in match."
+match-waiting-stop: "Stop starting match because player amount is small than minimum. $current/$min"
+
+dead-message: "$prefix $player is dead."
+kill-message: "$prefix $player was killed."
+
+completion-options:
+  time:
+    - "&7"
+    - "     Match has been ended!"
+    - "        Innocents win!"
+    - "      > Detectives $detectives | murders $murders | heroes $heroes <"
+    - "&7"
+  murder-death:
+    - "&7"
+    - "     Match has been ended!"
+    - "       All Murderers deaths!"
+    - "      > Detectives $detectives | murders $murders | heroes $heroes <"
+    - "&7"
+  murder-win:
+    - "&7"
+    - "     Match has been ended!"
+    - "        Murders win!"
+    - "      > Detectives $detectives | murders $murders | heroes $heroes <"
+    - "&7"
+
+waiting:
+  1:
+    message: "Match will begin in 1 seconds"
+    title: "&aGo!"
+  2:
+    message: "Match will begin in 2 seconds"
+    title: "&6Steady"
+  3:
+    message: "Match will begin in 3 seconds"
+    title: "&cReady"
+  4:
+    message: "Match will begin in 4 seconds"
+    subtitle: "&74"
+  5:
+    message: "Match will begin in 5 seconds"
+    subtitle: "&75"
+  15:
+    message: "Match will begin in 15 seconds"
+    subtitle: "&715"
+  30:
+    message: "Match will begin in 30 seconds"
+    subtitle: "&730"
+
+start:
+  default:
+    - "Match is started!"
+    - "detectives: $detectives | murderers: $murderers"
+  innocent:
+    - "&7"
+    - "            &fYour role is &ainnocent."
+    - "          &fCollect 10 golds and get bow."
+    - "           &cKill all murders on the game."
+    - "&7"
+  murder:
+    - "&7"
+    - "         &fYour role is &4murder. &fYoull have sword in $time seconds"
+    - "                    &fKill all innocents and detectives."
+    - "&7"
+  detective:
+    - "&7"
+    - "              &fYour role is &bdetective."
+    - "                  &fKill all murders."
+    - "&7"
+
+command:
+  reload: "$prefix MurderMystery has been reloaded!"
+  already-exists: "$prefix Arena $arena already exists!"
+  create: "$prefix Arena $arena has been created!"

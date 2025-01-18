@@ -1,0 +1,16 @@
+name: MurderMystery
+version: 1.0
+api-version: 1.13
+
+main: me.rejomy.murder.Murder
+
+commands:
+  murder:
+    aliases:
+      - murdermystery
+      - mmystery
+      - murderm
+
+softdepend:
+  - PlaceholderAPI
+  - PacketEvents

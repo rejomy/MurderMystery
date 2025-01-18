@@ -1,0 +1,111 @@
+settings:
+  time:
+    # The delay before match is end automatically, use delay in seconds.
+    # Example: 300 is 5 minutes.
+    match-delay: 300
+    # The delay after all players teleported to spawn. (Seconds)
+    end-delay: 3
+    # The delay before game is started.
+    # in seconds
+    waiting-delay:
+      # Default value for waiting the match starts.
+      time: 30
+      # The max value that we should decrease time if players a lot in the game.
+      # works like (((players * 100) / max in arena) * time) / 100
+      # if u want to disable this feature, just set the value like time.
+      min-time: 5
+
+    # Time in seconds after which a detective get arrow again.
+    time-after-shoot: 5
+
+    # How much seconds we should wait before give player his role in the game
+    # Dont set this value to 0, min value is 1.
+    role:
+      detective: "10s-20s"
+      murder: "10s-20s"
+      innocent: "10s-20s"
+
+      # Should we give a player an item that goes with their role immediately?
+      give-item-with-role: true
+
+    gold:
+      # Delay in seconds between gold spawns.
+      spawn-delay: 10
+      # Amount per delay
+      amount: 2
+
+    # only if give-item-with-role set to false.
+    # Provide time with valueFormat, for example 10sec.
+    # Dont set this value to 0, min value is 1.
+    item:
+      # Time in seconds when all detectives from match receive bows
+      give-bow-after: "10s-20s"
+      # Time in seconds when all murders from match receive swords
+      give-sword-after: "10s-20s"
+      # Time in seconds when all murders from match receive compass
+      # I dont like concept "if people small than x, we should give compass" because its unnecessary that murder should
+      #  running and find peoples a half game.
+      give-compass-after: "10s-20s"
+
+  game:
+    # Change player game mode to current in the game,
+    # If you dont want change game mode, just remove this or write 123 for example.
+    gamemode: ADVENTURE
+
+    # Damage editors:
+    # DISABLE - disable damage.
+    # ZERO - set damage to 0, need for save damage effect.
+    # DEFAULT - damage not mutable.
+    # 3 - Just number of damage.
+    damage:
+      fall: ZERO
+      player-hit: DISABLE
+      # This is only affect on damage, player dont touch knockback when he is die.
+      murder-hit: ZERO
+      # This is only affect on damage, player dont touch knockback when he is die.
+      bow-hit: ZERO
+      burn: ZERO
+      water: DISABLE
+      # Kill player instantly
+      void: 20
+      any: DISABLE
+
+    # Should we kick player from the game if he is change world, may be useful where in one server has more games,
+    # for example /spawn and player just leave from game?
+    auto-quit-when-world-change: true
+
+    # Prevent some actions in game.
+    # true - block, false - ignore.
+    actions:
+      block-place: false
+      block-break: false
+      hunger: true
+      move-item-to-other-inventory: true
+
+  # How much gold should collect player for receive bow.
+  bow-gold-costs: 5
+
+  # How many players there are per 1 detective or murder.
+  # Example: 4 players = 1 murder and 1 detective, players amount / dependency = detective and murder amount.
+  # (!) If u set the value small than zero or large than 999, its doesnt happens, for default we set 1 murder and 1 detective,
+  #   if u want to disable more than 1 murder and detective, just set the value to 9999 as example.
+  dependency: 4
+  # Should we randomize detective and murder amount
+  # We will use random function if this value set to true.
+  randomize: true
+
+# Select time after that murder can shoot sword again.
+murder-sword-shoot-delay: 5
+# The distance at which the sword will kill the player in flight
+murder-sword-shoot-kill-distance: 0.6
+# Speed of the flying sword.
+murder-sword-flying-speed: 1.2
+
+spectator:
+  enable: true
+
+# The plugin will take the value from here if it can't find some element in the arena file.
+default-arena-settings:
+  max-players: 16
+  min-players: 2
+  world: "world"
