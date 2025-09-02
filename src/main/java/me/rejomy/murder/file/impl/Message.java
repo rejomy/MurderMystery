@@ -100,7 +100,11 @@ public class Message implements Reloadable {
         }
 
         List<String> lines = config.getStringList(path);
-        lines.replaceAll(ColorUtil::toColor);
+        lines.replaceAll(line -> {
+            line = line.replace("$prefix", config.getString("prefix"));
+            line = ColorUtil.toColor(line);
+            return line;
+        });
 
         return lines;
     }

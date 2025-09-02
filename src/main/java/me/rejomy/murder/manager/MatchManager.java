@@ -10,7 +10,6 @@ import me.rejomy.murder.task.game.GameTask;
 import me.rejomy.murder.task.game.WaitingTask;
 import me.rejomy.murder.util.*;
 import me.rejomy.murder.util.item.ItemObject;
-import me.rejomy.murder.util.packetevent.PlayerHideNameUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -144,15 +143,14 @@ public class MatchManager {
                 data.receiveRoleDelay = MurderAPI.INSTANCE.getFileManager().getConfig().getRoleInnocent().getDiapasonValue();
             }
 
-            // Hide player name
-            PlayerHideNameUtil.hide(player);
-
             // Reset parameters to player
             PlayerUtil.clearEffects(player);
             PlayerUtil.clearInventory(player);
 
-            MessageUtil.sendMessage(map.getKey(), MurderAPI.INSTANCE.getFileManager().getMessage().getStartDefaultMessage(),
-                    "detectives", match.getDetectives().size(), "murderers", match.getMurderers().size());
+            MessageUtil.sendMessage(map.getKey(),
+                    MurderAPI.INSTANCE.getFileManager().getMessage().getStartDefaultMessage(),
+                    "detectives", match.getDetectives().size(),
+                    "murderers", match.getMurderers().size());
         }
 
         // Запускаем game task для игры.
@@ -212,7 +210,6 @@ public class MatchManager {
                     data.wasKilled = false;
                     data.infinityArrow = false;
 
-                    PlayerHideNameUtil.unhide(player);
                     TeleportUtil.teleportToLobby(player);
                 }
 

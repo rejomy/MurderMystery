@@ -23,7 +23,6 @@ repositories {
 
 dependencies {
     compileOnly("me.clip:placeholderapi:2.11.5")
-    compileOnly("com.github.retrooper:packetevents-spigot:2.5.0")
     compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
 
     implementation("co.aikar:acf-paper:0.5.1-SNAPSHOT")
